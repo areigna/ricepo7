@@ -19,7 +19,9 @@ var mainView = ricepo.addView('.view-main', {
 });
 
 alert(device);
+/*
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 }
+*/
