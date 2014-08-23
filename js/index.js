@@ -18,3 +18,8 @@ var mainView = ricepo.addView('.view-main', {
     dynamicNavbar: true
 });
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    alert(device.name);
+}
