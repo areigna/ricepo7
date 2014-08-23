@@ -19,4 +19,4 @@ var mainView = ricepo.addView('.view-main', {
 });
 
 
-alert(device.name);
+alert(name);
