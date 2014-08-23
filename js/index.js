@@ -1,4 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
+onDeviceReady();
 
 function onDeviceReady() {
     // Initialize your app
@@ -22,3 +23,9 @@ function onDeviceReady() {
     });
 }
 
+window.addEventListener("batterystatus", onBatteryStatus, false);
+
+function onBatteryStatus(info) {
+    // Handle the online event
+    alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+}
