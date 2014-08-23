@@ -18,3 +18,5 @@ var mainView = ricepo.addView('.view-main', {
     dynamicNavbar: true
 });
 
+
+alert(device.name);
