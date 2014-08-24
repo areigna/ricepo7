@@ -21,18 +21,21 @@ function onDeviceReady() {
         // Because we use fixed-through navbar we can enable dynamic navbar
         dynamicNavbar: true
     });
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL
-});
 
-function onSuccess(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
-}
+    $$("body").click(function(){
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL
+        });
 
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
+        function onSuccess(imageData) {
+            var image = document.getElementById('myImage');
+            image.src = "data:image/jpeg;base64," + imageData;
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+    });
 }
 
 window.addEventListener("batterystatus", onBatteryStatus, false);
