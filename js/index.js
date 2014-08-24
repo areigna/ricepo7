@@ -1,5 +1,6 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-onDeviceReady();
+var ricepo, $$, mainView;
+document.addEventListener("deviceready", onDeviceReady, false);
+//onDeviceReady();
 
 function onDeviceReady() {
     // Initialize your app
