@@ -4,7 +4,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     // Initialize your app
-    var ricepo = new Framework7({
+    ricepo = new Framework7({
         // Hide and show indicator during ajax requests
         onAjaxStart: function (xhr) {
             ricepo.showIndicator();
@@ -15,10 +15,10 @@ function onDeviceReady() {
     });
 
     // Export selectors engine
-    var $$ = Dom7;
+    $$ = Dom7;
 
     // Add view
-    var mainView = ricepo.addView('.view-main', {
+    mainView = ricepo.addView('.view-main', {
         // Because we use fixed-through navbar we can enable dynamic navbar
         dynamicNavbar: true
     });
