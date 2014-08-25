@@ -1,4 +1,5 @@
 var ricepo, $$, mainView;
+var test;
 document.addEventListener("deviceready", onDeviceReady, false);
 //onDeviceReady();
 
