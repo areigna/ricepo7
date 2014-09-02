@@ -11,8 +11,12 @@ require.config({
 });
 
 require(['util/func', 'util/router'], function(func, router) {
+    //global configuration
+    window.config = {
+        host: 'http://ec2-174-129-160-38.compute-1.amazonaws.com:8080'
+    };
 
-    var app = {
+    var phonegap = {
         initialize: function() {
             this.bindEvents();
         },
@@ -24,12 +28,12 @@ require(['util/func', 'util/router'], function(func, router) {
             }
         },
         onDeviceReady: function() {
-            app.receivedEvent('deviceready');
+            phonegap.receivedEvent('deviceready');
         },
         receivedEvent: function(event) {
             switch (event) {
                 case 'deviceready':
-                    app.initMainView();
+                    phonegap.initMainView();
                     break;
             }
         },
@@ -37,19 +41,12 @@ require(['util/func', 'util/router'], function(func, router) {
             //initilize the router
             router.init();
             //global config
-            window.config = {
-                host: 'http://ec2-174-129-160-38.compute-1.amazonaws.com:8080'
-            }
 
             $$ = Dom7;
 
             window.ricepo = new Framework7({
-		        onAjaxStart: function (xhr) {
-		            ricepo.showIndicator();
-		        },
-		        onAjaxComplete: function (xhr) {
-		            ricepo.hideIndicator();
-		        }
+		        //onAjaxStart: function (xhr) {ricepo.showIndicator(); },
+		        //onAjaxComplete: function (xhr) {ricepo.hideIndicator(); }
             	/* pushState: false, popupCloseByOutside:false, animateNavBackIcon: true, modalTitle: i18n.global.modal_title, modalButtonOk: i18n.global.modal_button_ok, modalButtonCancel: i18n.global.cancel, preprocess:router.preprocess */
             });
 
@@ -59,6 +56,6 @@ require(['util/func', 'util/router'], function(func, router) {
         }
     };
 
-    app.initialize();
+    phonegap.initialize();
 
 });

@@ -5,8 +5,8 @@ define(["store/restStore", "view/restView"], function(restStore, restView) {
 	];
 
 	function init(query){
-		restStore.load(function(rests){
-			restView.render(rests);
+		restStore.load(query, function(data){
+			restView.render(data);
 		});
 	}
 
