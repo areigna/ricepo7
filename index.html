@@ -7,35 +7,33 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>My App</title>
         <!-- Path to Framework7 Library CSS-->
-        <link rel="stylesheet" href="css/framework7.min.css">
+        <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.min.css">
         <!-- Path to your custom app styles-->
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar-overlay"></div>
         <!-- Views-->
         <div class="views">
             <div class="view view-main">
                 <div class="navbar">
                     <div class="navbar-inner">
+                        <div class="left"><a href="test2.html/?a=1">test</a></div>
                         <div class="center">Rochester NY</div>
-                        <div class="right"><a href="test.html">test</a></div>
+                        <div class="right"><a href="test.html/?a=1">test</a></div>
                     </div>
                 </div>
                 <div class="pages navbar-through toolbar-through">
-                    <div data-page="index" class="page">
-                        <div class="page-content">
-                        </div>
+                    <div data-page="rest" class="page">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--javascript library-->
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="lib/framework7.min.js"></script>
-        <script type="text/javascript" src="lib/yui-min.js"></script>
-        <!--mine-->
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="bower_components/framework7/dist/js/framework7.min.js"></script>
+        <!--require js-->
+        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
     </body>
 </html>
